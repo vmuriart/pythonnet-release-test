@@ -1,0 +1,33 @@
+sudo: false
+
+language: python
+python:
+  - 2.7
+  - 3.3
+  - 3.4
+  - 3.5
+  - 3.6
+
+env:
+  global:
+    - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+    - SEGFAULT_SIGNALS=all
+    - PYTHONUNBUFFERED=True
+
+addons:
+  apt:
+    sources:
+      - mono
+      - mono-libtiff-compat
+    packages:
+      - mono-devel
+      - ca-certificates-mono
+
+install:
+  - pip install -i https://testpypi.python.org/pypi pythonnet==2.2.0
+
+script:
+  - python -c "import clr; assert clr.__version__ == "2.2.0"
+
+notifications:
+  email: false
