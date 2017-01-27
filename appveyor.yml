@@ -31,4 +31,4 @@ init:
 
 test_script:
   - pip install -i https://testpypi.python.org/pypi pythonnet==2.2.1
-  - python -c "import clr; assert clr.__version__ == "2.2.1"
+  - python -c "import clr; assert clr.__version__ == '2.2.1'"
