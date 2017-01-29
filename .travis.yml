@@ -25,10 +25,10 @@ addons:
 
 install:
   - pip install pycparser
-  - pip install -i https://testpypi.python.org/pypi pythonnet==2.2.1
+  - pip install -i https://testpypi.python.org/pypi pythonnet==2.2.2
 
 script:
-  - python -c "import clr; assert clr.__version__ == '2.2.1'"
+  - python -c "import clr; assert clr.__version__ == '2.2.2'"
 
 notifications:
   email: false
