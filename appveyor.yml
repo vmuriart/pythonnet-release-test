@@ -1,4 +1,4 @@
-version: 2.2.1-build{build}
+version: '{branch}-{build}'
 build: off
 
 platform:
@@ -30,5 +30,5 @@ init:
   - python -c "import ctypes; print(ctypes.sizeof(ctypes.c_wchar))"
 
 test_script:
-  - pip install -i https://testpypi.python.org/pypi pythonnet==2.2.2
-  - python -c "import clr; assert clr.__version__ == '2.2.2'"
+  - pip install -i https://testpypi.python.org/pypi pythonnet==2.3.0
+  - python -c "import clr; assert clr.__version__ == '2.3.0'"
